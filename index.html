@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual Zoo Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay"></div>
+    <nav class="hero__nav">
+      <div class="logo">WildScape</div>
+      <ul>
+        <li><a href="#animals">Animals</a></li>
+        <li><a href="#habitats">Habitats</a></li>
+        <li><a href="#schedule">Daily Schedule</a></li>
+        <li><a href="#plan-visit">Plan Your Visit</a></li>
+      </ul>
+    </nav>
+    <div class="hero__content">
+      <h1>Embark on a Virtual Safari</h1>
+      <p>Meet our vibrant animal residents, discover their unique behaviors, and craft your own wildlife adventure.</p>
+      <a class="cta" href="#animals">Explore the Zoo</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="plan-visit" class="panel stats">
+      <div class="stat">
+        <p class="label">Animals</p>
+        <p class="value" data-stat="animals">0</p>
+      </div>
+      <div class="stat">
+        <p class="label">Habitats</p>
+        <p class="value" data-stat="habitats">0</p>
+      </div>
+      <div class="stat">
+        <p class="label">Conservation Programs</p>
+        <p class="value" data-stat="programs">5</p>
+      </div>
+      <div class="stat">
+        <p class="label">Virtual Visitors Today</p>
+        <p class="value" data-stat="visitors">0</p>
+      </div>
+    </section>
+
+    <section id="animals" class="panel animals">
+      <div class="panel__header">
+        <div class="filters">
+          <input type="search" id="search" placeholder="Search by name or species..." aria-label="Search animals" />
+          <select id="habitat-filter" aria-label="Filter by habitat">
+            <option value="all">All habitats</option>
+          </select>
+          <select id="status-filter" aria-label="Filter by conservation status">
+            <option value="all">All statuses</option>
+          </select>
+        </div>
+        <div class="toggle">
+          <span>Show favorites only</span>
+          <label class="switch">
+            <input type="checkbox" id="favorites-toggle" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="animal-grid" aria-live="polite"></div>
+      <div class="empty-state hidden" role="status">
+        <h3>No animals found</h3>
+        <p>Try adjusting your filters to discover more wildlife friends.</p>
+      </div>
+    </section>
+
+    <section id="habitats" class="panel habitats">
+      <h2>Habitat Explorer</h2>
+      <div class="habitat-list"></div>
+      <div class="habitat-info" aria-live="polite">
+        <h3>Select a habitat to learn more</h3>
+        <p>Each habitat is designed to mimic the natural world of our residents, complete with unique climate, vegetation, and enrichment activities.</p>
+      </div>
+    </section>
+
+    <section id="behavior" class="panel behavior">
+      <h2>Live Behavior Feed</h2>
+      <ul class="behavior-feed" aria-live="polite"></ul>
+    </section>
+
+    <section id="schedule" class="panel schedule">
+      <h2>Daily Adventure Schedule</h2>
+      <div class="timeline"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>WildScape Virtual Zoo &copy; <span id="year"></span>. Crafted for wildlife enthusiasts everywhere.</p>
+  </footer>
+
+  <template id="animal-card-template">
+    <article class="animal-card" tabindex="0">
+      <button class="favorite" aria-label="Toggle favorite" title="Toggle favorite">
+        <span class="icon">☆</span>
+      </button>
+      <div class="media">
+        <img src="" alt="" loading="lazy" />
+        <span class="badge"></span>
+      </div>
+      <div class="info">
+        <h3 class="name"></h3>
+        <p class="species"></p>
+        <p class="habitat"></p>
+        <p class="status"></p>
+      </div>
+      <div class="details">
+        <p class="description"></p>
+        <ul class="facts"></ul>
+      </div>
+    </article>
+  </template>
+
+  <script src="zooCore.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
