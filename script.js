@@ -367,6 +367,13 @@ const data = {
       title: 'Twilight Owl Encounter',
       description: 'Experience Noctis in flight and practice night vision challenges.'
     }
+    // ... keep all animal objects as in your original file ...
+  ],
+  habitats: [
+    // ... keep all habitat objects ...
+  ],
+  schedule: [
+    // ... keep all schedule objects ...
   ]
 };
 
