@@ -1,13 +1,3 @@
-# Zoo
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/README.md b/README.md
-index dd211022a500509dc8255d706a0327c31ccad4dc..73d7a53634df966cb77920baaa32efbd6d623a0e 100644
---- a/README.md
-+++ b/README.md
-@@ -1 +1,25 @@
--# Zoo
-+# WildScape Virtual Zoo
-+
 +A polished, immersive virtual zoo experience built with HTML, CSS, and JavaScript. Explore detailed animal profiles, discover habitats, follow a live behavior feed, and plan your virtual visit with an interactive schedule.
 +
 +## Features
